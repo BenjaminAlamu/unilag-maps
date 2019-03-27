@@ -1,8 +1,20 @@
 <template>
     <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!"/>
-        <GridLayout columns="*" rows="*">
-            <Label class="message" :text="msg" col="0" row="0"/>
+        <ActionBar class="action-bar" title="Map"></ActionBar>
+        <GridLayout>
+            <Mapbox
+                    accessToken="sk.eyJ1IjoiaWZlbm5hIiwiYSI6ImNqdHJ0bGd3czByYzIzeXIwaGc4YnJkY2QifQ.OA65PJhnfB8eFnx879VZhA"
+                    mapStyle="traffic_day"
+                    latitude="50.467735"
+                    longitude="13.427718"
+                    hideCompass="true"
+                    zoomLevel="18"
+                    showUserLocation="false"
+                    disableZoom="false"
+                    disableRotation="false"
+                    disableScroll="false"
+                    disableTilt="false">
+            </Mapbox>
         </GridLayout>
     </Page>
 </template>
@@ -10,10 +22,13 @@
 <script >
   export default {
     data() {
-      return {
-        msg: 'Hello World!'
+      return {}
+    },
+      methods: {
+          onMapReady() {
+              //
+          }
       }
-    }
   }
 </script>
 
